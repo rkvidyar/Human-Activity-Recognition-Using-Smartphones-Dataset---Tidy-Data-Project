@@ -36,7 +36,7 @@
 
 ## To build a data frame table that contains mean values grouped first by subject identifier and then by activity label from the raw data files as listed in the repository contents, steps must be completed as described below. The script or code generates a text data file that meets the principles of tidy data:
 
-## 1.	Read in test and train data sets and their corresponding data sets for activity label numbers and subject identifiers. Also read in the data sets for feature variable names and descriptive activity labels.
+## 1.	Read in test and train data sets and their corresponding data sets for activity label numbers and subject identifiers. Also read in the data sets for feature variable names and descriptive activity labels. Read from set working directory. 
 
 ## The code is the following:
 
