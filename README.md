@@ -66,7 +66,9 @@ The code is the following:
 ## Combine by binding data set rows using rbind( )  
 
 X_bind <- rbind(X_test, X_train)
+
 y_bind <- rbind(y_test, y_train)
+
 subject_bind <- rbind(subject_test, subject_train)
 
 3.	Make the variable names of the features dataset as column headers for the combined test/train data set.
@@ -153,6 +155,7 @@ The code is the following:
 ## Updated column or variable names in the data set.
 
 colnames(pre_tidy3)[1] <- "subject.id"
+
 colnames(pre_tidy3)[2] <- "activity.label"
 
 ## Used tolower( ) function to make all column or variable names have lowercase 
@@ -166,13 +169,21 @@ colnames(pre_tidy3) <- tolower(names(pre_tidy3))
 ## data set. 
 
 freq <- sub("^f+", "freq.", names(pre_tidy3))
+
 time <- sub("^t+", "time.", freq)
+
 body <- sub("body+", "body.", time)
+
 body2 <- sub("body.body+", "body.", body)
+
 gravity <- sub("gravity+", "gravity.", body2)
+
 jerk <- sub("jerk+", ".jerk", gravity)
+
 mag <- sub("mag+", ".mag", jerk)
+
 periods <- sub("\\.\\.", "", mag)
+
 colnames(pre_tidy3) <- periods
 
 ## renamed dataset to tidy1 to recognize it as first tidy set. 
@@ -182,6 +193,7 @@ tidy1 <- pre_tidy3
 ## Need to install and load dplyr package in order to use tbl_df function. 
 
 install.packages("dplyr")
+
 library(dplyr)
 
 tidy1 <- tbl_df(tidy1) ## convert the data frame to a data frame table. 
@@ -196,18 +208,26 @@ The code is the following:
 ## descriptive activity label. The summary data is an average using the mean( ) function. 
 
 tidy2 <- group_by(tidy1, subject.id, activity.label) %>% summarise_each(funs(mean), "time.body.acc.mean.x" : "freq.body.gyro.jerk.mag.std")
+
 10.	Created a text file named tidy2RM.txt from the tidy2 data set. 
+
 The code is the following:
 
 ## Use write.table( ) function to produce a text file that is saved locally named 
 ## tidy2RM.txt. A character vector of row names is not written. Column names are 
 ## included but not in quotes. Values are in a single space-delimited text file. 
+
 write.table(tidy2, file="E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\tidy2RM.txt", row.names=FALSE, col.names=TRUE, sep=" ", quote=FALSE)
+
 11.	Read in the saved tidy2RM.txt file and viewed it in R in a spreadsheet-style format. 
+
 tidy_data <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\tidy2RM.txt", header = TRUE)
+
 ## Used to view entire data frame table Invoke a spreadsheet-style data viewer on a 
 ## matrix-like R object.
+
 View(tidy_data) 
+
 Conclusion
 The resulting final data set of tidy2 or tidy2RM.txt file meets the principles of tidy data:
 1.	Each variable forms a column with headings so you can differentiate between columns. There are no duplicate columns. 
