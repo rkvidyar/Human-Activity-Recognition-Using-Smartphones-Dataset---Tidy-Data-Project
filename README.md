@@ -36,23 +36,25 @@
 
 ## To build a data frame table that contains mean values grouped first by subject identifier and then by activity label from the raw data files as listed in the repository contents, steps must be completed as described below. The script or code generates a text data file that meets the principles of tidy data:
 
-## 1.	Read in test and train data sets and their corresponding data sets for activity label numbers and subject identifiers. Also read in the data sets for feature variable names and descriptive activity labels. Read from working directory that you can set using setwd(directory filepath) and confirmed using getwd(). 
+## 1.	Read in test and train data sets and their corresponding data sets for activity label numbers and subject identifiers. Also read in the data sets for feature variable names and descriptive activity labels. Read from working directory that is set using setwd("directory filepath") and confirmed using getwd(). 
 
 ## The code is the following:
 
-X_test <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\test\\X_test.txt", header=FALSE, fill=TRUE)
+X_test <- read.table("X_test.txt", header=FALSE, fill=TRUE)
 
-y_test <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\test\\y_test.txt", header=FALSE)
-subject_test <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\test\\subject_test.txt", header=FALSE)
+y_test <- read.table("y_test.txt", header=FALSE)
 
-subject_train <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\train\\subject_train.txt", header=FALSE)
+subject_test <- read.table("subject_test.txt", header=FALSE)
 
-X_train <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\train\\X_train.txt", header=FALSE, fill=TRUE)
+subject_train <- read.table("subject_train.txt", header=FALSE)
 
-y_train <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\train\\y_train.txt", header=FALSE)
-features <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\features.txt", header=FALSE, stringsAsFactors=FALSE)
+X_train <- read.table("X_train.txt", header=FALSE, fill=TRUE)
 
-activity <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\activity_labels.txt", header=FALSE, stringsAsFactors=FALSE)
+y_train <- read.table("y_train.txt", header=FALSE)
+
+features <- read.table("features.txt", header=FALSE, stringsAsFactors=FALSE)
+
+activity <- read.table("activity_labels.txt", header=FALSE, stringsAsFactors=FALSE)
 
 ## 2.	Combine by binding data set rows for each of the following: the test and train data sets, the test and train activity numbers and the test and train subject identifiers.
 
@@ -211,11 +213,11 @@ tidy2 <- group_by(tidy1, subject.id, activity.label) %>% summarise_each(funs(mea
 ## tidy2RM.txt. A character vector of row names is not written. Column names are 
 ## included but not in quotes. Values are in a single space-delimited text file. 
 
-write.table(tidy2, file="E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\tidy2RM.txt", row.names=FALSE, col.names=TRUE, sep=" ", quote=FALSE)
+write.table(tidy2, file="tidy2RM.txt", row.names=FALSE, col.names=TRUE, sep=" ", quote=FALSE)
 
 ## 11.	Read in the saved tidy2RM.txt file and viewed it in R in a spreadsheet-style format. 
 
-tidy_data <- read.table("E:\\Drive E\\Coursera\\Getting and Cleaning Data\\Week 4\\Getting and Cleaning Data Course Project\\UCI HAR Dataset\\tidy2RM.txt", header = TRUE)
+tidy_data <- read.table("tidy2RM.txt", header = TRUE)
 
 ## Used to view entire data frame table Invoke a spreadsheet-style data viewer on a 
 ## matrix-like R object.
