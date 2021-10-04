@@ -8,7 +8,7 @@
 # Repository Contents:
 ## Human Activity Recognition database has been built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
 
-# File Name	with Description:
+# File Names	with Descriptions:
 
 ## activity_labels	 	                                               - Links the class labels (integers) with their descriptive activity name.
 
