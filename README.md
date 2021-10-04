@@ -127,7 +127,7 @@ pre_tidy2 <- cbind(subject_bind, pre_tidy1)
 
 ## The code is the following:
 
-## Merge the data set from the previous step with descriptive activity label data set using ## a key column of activity label number shared by both data sets.  
+## Merge the data set from the previous step with descriptive activity label data set using a key column of activity label number shared by both data sets.  
 
 merged_Data = merge(pre_tidy2, activity, by.x=2, by.y=1, all=TRUE)
 
