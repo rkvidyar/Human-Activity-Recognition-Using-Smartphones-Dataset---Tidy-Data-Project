@@ -10,27 +10,27 @@ Human Activity Recognition database has been built from the recordings of 30 sub
 
 File Name			                                                            Description
 
-activity_labels			                                              Links the class labels (integers) with their descriptive activity name.
+activity_labels			                                               Links the class labels (integers) with their descriptive activity name.
 
 CODE BOOK – HUMAN ACTIVITY RECOGNITION USING SMARTPHONES DATASET	Notes on study design, data dictionary and dataset contents and structure. 
 
-features			                                                    List of all features variables.
+features			                                                      List of all features variables.
 
-features_info			                                                Shows information about the variables used on the feature vector.
+features_info			                                                 Shows information about the variables used on the feature vector.
 
-README.md			                                                    Documentation explaining the project and how to use files contained in the repository.
+README.md			                                                     Documentation explaining the project and how to use files contained in the repository.
 
-subject_test			                                                Each row identifies the subject who performed the activity for test window sample. Its range is from 1 to 30.
+subject_test			                                                  Each row identifies the subject who performed the activity for test window sample. Its range is from 1 to 30.
 
-subject_train			                                                Each row identifies the subject who performed the activity for train window sample. Its range is from 1 to 30.
+subject_train			                                                 Each row identifies the subject who performed the activity for train window sample. Its range is from 1 to 30.
 
-X_test				                                                    Test set.
+X_test				                                                       Test set.
 
-X_train				                                                    Training set. 
+X_train				                                                      Training set. 
 
-y_test				                                                    Test labels.
+y_test				                                                       Test labels.
 
-y_train				                                                    Train labels.
+y_train				                                                      Train labels.
 
 The Process (Instruction List):
 
