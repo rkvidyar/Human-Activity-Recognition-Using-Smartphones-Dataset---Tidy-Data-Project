@@ -1,6 +1,6 @@
 # Human-Activity-Recognition-Using-Smartphones-Dataset---Tidy-Data-Project
 
-# README - HUMAN ACTIVITY RECOGNITION USING SMARTPHONES DATASET
+# README - Human Activity Recognition Using Smartphones Dataset
 
 # Problem Summary:
 ## There is strong interest from companies like Fitbit, Nike, and Jawbone Up in wearable computing and they are developing advanced algorithms to attract new users. For proof of this capability, data has been collected from the accelerometers and gyrocopes of a Samsung Galaxy S smartphone. Steps are taken to process the collected data. A portion of the collected data is made accessible in a tidy data format by subject id and activity name.
